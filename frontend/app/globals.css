@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #3b82f6;
+  --secondary: #6366f1;
+  --background: #ffffff;
+  --surface: #f3f4f6;
+  --text: #1f2937;
+  --text-muted: #6b7280;
+  --accent: #f59e0b;
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --radius-btn: 8px;
+  --radius-card: 12px;
+  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 font-semibold transition-all duration-300 active:scale-95;
+    background: var(--primary);
+    color: white;
+    border-radius: var(--radius-btn);
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 font-semibold transition-all duration-300 border-2 active:scale-95;
+    border-color: var(--primary);
+    color: var(--primary);
+    border-radius: var(--radius-btn);
+  }
+
+  .card {
+    background: var(--surface);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    @apply p-6;
+  }
+}
